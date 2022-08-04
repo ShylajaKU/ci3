@@ -60,6 +60,18 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array('session');
 
+
+
+/*
+| -------------------------------------------------------------------
+|  Auto-load Helper Files
+| -------------------------------------------------------------------
+| Prototype:
+|
+|	$autoload['helper'] = array('url', 'file');
+*/
+$autoload['helper'] = array('url' , 'file');
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -80,16 +92,6 @@ $autoload['libraries'] = array('session');
 |
 */
 $autoload['drivers'] = array();
-
-/*
-| -------------------------------------------------------------------
-|  Auto-load Helper Files
-| -------------------------------------------------------------------
-| Prototype:
-|
-|	$autoload['helper'] = array('url', 'file');
-*/
-$autoload['helper'] = array('url');
 
 /*
 | -------------------------------------------------------------------
