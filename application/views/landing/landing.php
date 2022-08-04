@@ -27,7 +27,7 @@
                         <ul>
                             <li>Completly FREE Premium plans.</li>
                             <li>On BETA stage of the website free access to all the functionalities.</li>
-                            <li> <a href="<?= base_url('register')?>">Register</a>  now and get <strong>6 MONTH PREMIUM PLAN FOR FREE</strong></li>
+                            <li> <a href="<?= base_url('register')?>">Register now</a> and get <strong>6 MONTH PREMIUM PLAN FOR FREE</strong></li>
                         </ul>
                     </div>
                 </div>
