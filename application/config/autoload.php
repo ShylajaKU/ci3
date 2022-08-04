@@ -70,7 +70,7 @@ $autoload['libraries'] = array('session');
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url' , 'file');
+$autoload['helper'] = array('url' , 'file' , 'form' , 'text' , 'path' , 'html' , 'string' , 'date');
 
 /*
 | -------------------------------------------------------------------
