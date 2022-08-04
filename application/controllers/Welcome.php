@@ -8,6 +8,16 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 // ------------------------------------------
+public function index(){
+	// public function landing_fc(){
+	$this->load->view('templates/head/header');
+	// $this->load->view('templates/login_header/login_header');
+	
+	$this->load->view('landing/landing');
+	$this->load->view('templates/foot/footer');
+
+}
+// ------------------------------------------
 public function home_fc(){
 	// var_dump($this->session->userdata());
 	if($this->session->userdata('logged_in') != '1'){redirect('login');}
@@ -52,15 +62,7 @@ public function home_fc(){
 
 }
 // ------------------------------------------
-	public function landing_fc(){
-		$this->load->view('templates/head/header');
-		// $this->load->view('templates/login_header/login_header');
-		
-		$this->load->view('landing/landing');
-		$this->load->view('templates/foot/footer');
 
-	}
-// ------------------------------------------
 	public function register_1st_page(){
 if($this->session->userdata('level_1') == '1'){redirect('home');}
 
