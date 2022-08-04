@@ -176,7 +176,7 @@
 
     <button type="submit" class="btn btn-primary vip-center">Register</button>
     <!-- ------------------------------------- -->
-    <a style="margin-left:15px ;" href="http://">Login Here</a>
+    <a style="margin-left:15px ;" href="<?= base_url('login') ?>">Login Here</a>
     <!-- ------------------------------------- -->
     
     <br>
