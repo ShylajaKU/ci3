@@ -80,7 +80,7 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2 id="contact">Contact us</h2>
-                        <p class="lead">Email : customer-contact@k4kalyanam.in</p>
+                        <p class="lead">Email : kforkalyanam.in@gmail.com</p>
                     </div>
                 </div>
             </div>
