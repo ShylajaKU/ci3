@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Verification_model extends CI_Model
 {
 // ---------------------------------------
-    public function send_email_verication_link_fc($user_id,$official_email_sl_no){
+    public function send_email_verication_link_fm($user_id){
+        // called from register 1st page
+        // resend is in verifiction controller
+        $official_email_sl_no = '1';
         // for verifying email
         $this->db->where('user_id',$user_id);
         // $this->db->select('user_id');
@@ -38,13 +41,14 @@ public function send_verification_email_fm($email,$official_email_sl_no,$email_v
     $port = $result[0]['port'];
     $this->load->library('email');
 
-if(base_url() != 'https://k4kalyanam.in/' ){
+if(base_url() != 'https://kforkalyanam.in/' ){
     $protocol = 'smtp';   
      // smtp for localhost
 }else{
     $protocol = 'mail';  
       // mail for server
 }
+// $protocol = 'mail';  
 
 $config = array(
     'smtp_crypto' => 'ssl', //can be 'ssl' or 'tls' for example
@@ -58,11 +62,11 @@ $config = array(
     'smtp_timeout' => '200', //in seconds
     'charset' => 'utf-8',
     'wordwrap' => TRUE,
-    'newline' => '\r\n',
-    'priority' => 1,
+    'newline' => "\r\n",
+    'priority' => '1',
 );
 
-$site_name = 'k4kalyanam';
+$site_name = 'kforkalyanam';
 
 $this->email->initialize($config);
 
@@ -79,7 +83,7 @@ $this->email->message('
 
     .'<br><br>'.$message.'<br><br>'.'
     
-    This link will verify your email address, and then you’ll officially be a part of our community.
+    This link will verify your email address, and then you will officially be a part of our community.
     <br>
     <br>
     See you there!
@@ -93,6 +97,8 @@ $this->email->message('
     }else{
         echo '<script>alert("Email Sent");</script>';
         $result = array();
+        $official_email_sl_no = '';
+        $email = '';
         $official_email = '';
         $password = '';
         $host = '';

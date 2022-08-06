@@ -48,7 +48,7 @@ public function resend_verification_email_fc($user_id){
     $email_ver_code_one = $result['email_ver_code_one'];
     $email_ver_code_two = $result['email_ver_code_two'];
     $email = $result['email'];
-    $official_email_sl_no = 1;
+    $official_email_sl_no = '1';
     $this->verification_model->send_verification_email_fm($email,$official_email_sl_no,$email_ver_code_one,$email_ver_code_two,$user_id);
     $this->session->set_flashdata('success','Verificaton email has been resend');
     redirect('please-verify-your-email');

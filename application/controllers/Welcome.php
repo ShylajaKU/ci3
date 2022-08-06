@@ -143,8 +143,7 @@ if($this->session->userdata('level_1') == '1'){redirect('home');}
 			$this->session->set_userdata('user_id',$user_id);
 			$this->session->set_userdata('logged_in','1');
 			$this->get_model->set_userdata_from_db($user_id);
-			$official_email_sl_no = '1';
-			$this->verification_model->send_email_verication_link_fc($user_id,$official_email_sl_no);
+			$this->verification_model->send_email_verication_link_fm($user_id);
 		
 			redirect('home');
 		}
