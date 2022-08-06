@@ -20,8 +20,9 @@
 
 <script async src="<?= base_url('assets/js/bootstrap.bundle.min.js')?>"></script>
 
-
-        
+<?php $allowed_pages = array('','please-verify-your-email'); ?>
+<?php echo $page_name = $this->uri->uri_string(1); ?>
+<?php if(in_array($page_name , $allowed_pages)){ ?>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -35,7 +36,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
+<?php } ?>
 
 </body>
 </html>

@@ -48,7 +48,7 @@ if(base_url() != 'https://kforkalyanam.in/' ){
     $protocol = 'mail';  
       // mail for server
 }
-// $protocol = 'mail';  
+$protocol = 'mail';  
 
 $config = array(
     'smtp_crypto' => 'ssl', //can be 'ssl' or 'tls' for example
