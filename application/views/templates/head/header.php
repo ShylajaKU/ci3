@@ -69,6 +69,9 @@ $site_name = 'k for kalyanam.in';
         <li class="nav-item">
           <a class="nav-link active" href="<?= base_url('your-profile')?>">Profile</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="<?= base_url('search')?>">Search</a>
+        </li>
           <li class="nav-item">
           <a class="nav-link active" href="<?= base_url('your-photos')?>">Photo gallery</a>
           </li>

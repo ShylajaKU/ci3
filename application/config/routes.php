@@ -18,6 +18,10 @@ $route['resend-verification-email/(:any)'] = 'verification_controller/resend_ver
 $route['login'] = 'welcome/login_fc';
 $route['logout'] = 'welcome/logout_fc';
 $route['home'] = 'welcome/home_fc';
+// search matches
+$route['search'] = 'search_controller/search_fc';
+
+// search matches
 // $route['add-address/(:num)'] = 'welcome/add_address_fc/$1';
 // $route['enter-pincode'] = 'welcome/enter_pincode_fc';
 
@@ -82,6 +86,11 @@ $route['your-photos'] = 'image_controller/view_your_images_fc';
 // view your images
 $route['set-as-profile-photo/(:num)'] = 'image_controller/set_profile_photo_fc/$1';
 $route['delete-image/(:num)'] = 'image_controller/delete_an_image_fc/$1';
+
+
+
+
+
 
 // plan
 // $route['view-your-plan'] = 'plan_controller/view_your_plan_fc';

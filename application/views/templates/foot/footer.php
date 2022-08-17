@@ -20,8 +20,11 @@
 
 <script async src="<?= base_url('assets/js/bootstrap.bundle.min.js')?>"></script>
 
-<?php $allowed_pages = array('','please-verify-your-email'); ?>
-<?php echo $page_name = $this->uri->uri_string(1); ?>
+<?php $allowed_pages = array(
+    '',
+    'please-verify-your-email',
+    ); ?>
+<?php $page_name = $this->uri->uri_string(1); ?>
 <?php if(in_array($page_name , $allowed_pages)){ ?>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
