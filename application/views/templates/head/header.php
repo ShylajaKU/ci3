@@ -42,8 +42,11 @@ $site_name = 'k for kalyanam.in';
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
   <!-- <div class="container px-4"> -->
-
+  <?php if(!$this->session->userdata('logged_in')){ ?>
     <a class="navbar-brand" href="<?= base_url()?>"><?= $site_name ?></a>
+<?php }else{ ?>
+    <a class="navbar-brand" href="<?= base_url('home')?>"><?= $site_name ?></a>
+  <?php } ?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -60,6 +63,9 @@ $site_name = 'k for kalyanam.in';
           <a class="nav-link active" href="<?= base_url('login')?>">Login</a>
         </li>
       <?php }else{ ?>
+        <li class="nav-item">
+          <a class="nav-link active" href="<?= base_url('home')?>">Home</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link active" href="<?= base_url('your-profile')?>">Profile</a>
         </li>
