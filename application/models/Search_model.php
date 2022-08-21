@@ -46,13 +46,16 @@ public function insert_information_array_into_caste_id_fm_for_all_caste(){
     
     foreach($caste_table as $ip){
         $caste = $ip['caste'];
-        $this->search_model->preample($caste);
+        $gender = 'female';
+        $this->search_model->preample($caste,$gender);
+        $gender = 'male';
+        $this->search_model->preample($caste,$gender);
     }
 }
 
 // ---------------------------------------
-public function preample($caste){
-    $gender = 'female';
+public function preample($caste,$gender){
+    if($gender == 'female'){
     $caste_id_table_col = 'highest_education_brides';
     $users_table_col = 'education';
     $this->search_model->action($caste,$caste_id_table_col,$users_table_col,$gender);
@@ -76,8 +79,10 @@ public function preample($caste){
     $caste_id_table_col = 'marital_status_brides';
     $users_table_col = 'marital_status';
     $this->search_model->action($caste,$caste_id_table_col,$users_table_col,$gender);
+    }
 
-    $gender = 'male';
+    if($gender == 'male'){
+    
     $caste_id_table_col = 'highest_education_grooms';
     $users_table_col = 'education';
     $this->search_model->action($caste,$caste_id_table_col,$users_table_col,$gender);
@@ -101,6 +106,7 @@ public function preample($caste){
     $caste_id_table_col = 'marital_status_grooms';
     $users_table_col = 'marital_status';
     $this->search_model->action($caste,$caste_id_table_col,$users_table_col,$gender);
+    }
 }
 // ---------------------------------------
 public function action($caste,$caste_id_table_col,$users_table_col,$gender){
@@ -119,7 +125,10 @@ if($gender == 'male'){
     $no_of = 'no_of_grooms';
 }
 if($num_rows == 0){
-    $data = array($no_of => 0);
+    $data = array(
+        $no_of => 0,
+        $caste_id_table_col => NULL,
+    );
     $update_where = array('caste' => $caste);
     $this->db->where($update_where);
     $this->db->update('caste_id',$data);
