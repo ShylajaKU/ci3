@@ -197,25 +197,67 @@
 
 // access checker
 // redirect to home if no access
-echo $user_id = $this->session->userdata['user_id'];
-echo $page_name = $this->uri->segment(1);
+// echo $user_id = $this->session->userdata['user_id'];
+// echo $page_name = $this->uri->segment(1);
 
-$user_details = $this->db->where('user_id',$user_id)->get('users')->result_array()[0];
-var_dump($user_details);
+// $user_details = $this->db->where('user_id',$user_id)->get('users')->result_array()[0];
+// var_dump($user_details);
 
-$email_verified = $user_details['email_verified'];
-$phone_no_verified = $user_details['phone_no_verified'];
-$unique_id = $user_details['unique_id'];
-$user_active = $user_details['user_active']; 
-$level_1 = $user_details['level_1'];
-$level_2 = $user_details['level_2'];
-$level_3 = $user_details['level_3'];
-$level_4 = $user_details['level_4'];
-$level_5 = $user_details['level_5'];
-$level_6 = $user_details['level_6'];
+// $email_verified = $user_details['email_verified'];
+// $phone_no_verified = $user_details['phone_no_verified'];
+// $unique_id = $user_details['unique_id'];
+// $user_active = $user_details['user_active']; 
+// $level_1 = $user_details['level_1'];
+// $level_2 = $user_details['level_2'];
+// $level_3 = $user_details['level_3'];
+// $level_4 = $user_details['level_4'];
+// $level_5 = $user_details['level_5'];
+// $level_6 = $user_details['level_6'];
+
+// $q = $this->db->get('caste_id');
+// $caste_table = $q->result_array();
+// $nu = $q->num_rows();
+// // var_dump($caste_table);
+
+// foreach($caste_table as $ip){
+//     echo $caste = $ip['caste'];
+// // }
+
+// $array = array();
+// $where = array('caste' => $caste, 'user_active' => 1);
+// $this->db->where($where);
+// $query = $this->db->get("users");
+// $users_table = $query->result_array();
+// // var_dump($users_table);
+// $num_rows = $query->num_rows();
+// // echo $num_rows;
+
+// foreach($users_table as $user){
+//     $marital_status = $user['marital_status'];
+//     if(!in_array($marital_status,$array)){
+//     array_push($array,$marital_status);
+//     }
+// }
+
+// var_dump($array);
+// print_r (implode(",",$array));
+// $comma_string = implode(",",$array);
+// echo $comma_string;
+// $data = array('marital_status' => $comma_string);
+// $update_where = array('caste' => $caste);
+// $this->db->where($update_where);
+// $this->db->update('caste_id',$data);
+// }
 
 
 
+
+
+
+
+
+
+$this->search_model->insert_information_array_into_caste_id_fm_for_all_caste();
 
 
 
