@@ -20,6 +20,7 @@ $route['logout'] = 'welcome/logout_fc';
 $route['home'] = 'welcome/home_fc';
 // search matches
 $route['search'] = 'search_controller/search_fc';
+$route['search-by-education/(:any)/(:any)'] = 'search_controller/search_by_education_fc/$1/$2';
 
 // search matches
 // $route['add-address/(:num)'] = 'welcome/add_address_fc/$1';

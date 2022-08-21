@@ -257,9 +257,30 @@
 
 
 
-$this->search_model->insert_information_array_into_caste_id_fm_for_all_caste();
+// $this->search_model->insert_information_array_into_caste_id_fm_for_all_caste();
+?>
 
 
+<?php
+$where = array(
+    'gender' => 'gender',
+    // 'caste' => $user_caste,
+    // 'education' => $edu,
+    // 'occupation' => $pro,
+    // 'income_bracket' => $inc,
+    // 'family_class' => $class,
+    // 'marital_status' => $mar,
+    // 'mother_tounge' => $lan,
+);
+var_dump($where);
+$edu = 1;
+
+if($edu != 0){
+    // 'education' => $edu,
+    $ar = array('education'=>$edu);
+    $where = array_merge($where,$ar);
+}
+var_dump($where);
 
 
 

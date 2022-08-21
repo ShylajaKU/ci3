@@ -6,7 +6,9 @@ class Search_model extends CI_Model
 // ---------------------------------------
 // for registered users only
 public function home_page_results_fm(){
-    //  by gender and caste 
+    //  by gender and caste  
+    //  on  /home page
+    // default on page  not search
     $user_id = $this->session->userdata('user_id');
 
     $caste = $this->db->where('user_id',$user_id)->get('users')->result_array()[0]['caste'];
@@ -157,6 +159,56 @@ $this->db->update('caste_id',$data);
 }
 // ---------------------------------------
 // ---------------------------------------
+// public function find_results($where){
+
+//     $this->db->where($where);
+//     $query = $this->db->get('users');
+//     return $result = $query->result_array();
+// }
+// ---------------------------------------
+public function find_results($user_gender,$user_caste,$edu,$pro,$inc,$class,$mar,$lan){
+    if($user_gender == 'female'){
+        $gender = 'male';
+    }
+    if($user_gender == 'male'){
+        $gender = 'female';
+    }
+    $where = array(
+        'gender' => $gender,
+        'caste' => $user_caste,
+        'user_active' => 1,
+    );
+    if($edu){
+        $a = array('education' => $edu,);
+        $where = array_merge($where,$a);
+    }
+    if($pro){
+        $a = array('occupation' => $pro,);
+        $where = array_merge($where,$a);
+    }
+    if($inc){
+        $a = array('income_bracket' => $inc,);
+        $where = array_merge($where,$a);
+    }
+    if($class){
+        $a = array('family_class' => $class,);
+        $where = array_merge($where,$a);
+    }
+    if($mar){
+        $a = array('marital_status' => $mar,);
+        $where = array_merge($where,$a);
+    }
+    if($lan){
+        $a = array('mother_tounge' => $lan,);
+        $where = array_merge($where,$a);
+    }
+    var_dump($where);
+
+    $this->db->where($where);
+    $query = $this->db->get('users');
+    return $result = $query->result_array();
+
+}
 // ---------------------------------------
 // ---------------------------------------
 // ---------------------------------------
