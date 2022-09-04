@@ -26,7 +26,13 @@ public function search_fc(){
     if($user_gender == 'male'){$data['gender'] = 'female';}
     $data['user_caste'] = $user_caste;
 
-    $this->form_validation->set_rules('highest_education','Education','required');
+    $this->form_validation->set_rules('hidden','Education','required');
+    // $this->form_validation->set_rules('highest_education','Education','required');
+    // $this->form_validation->set_rules('occupation','Education','required');
+    // $this->form_validation->set_rules('income_bracket','Education','required');
+    // $this->form_validation->set_rules('family_class','Education','required');
+    // $this->form_validation->set_rules('marital_status','Education','required');
+    // $this->form_validation->set_rules('mother_tounge','Education','required');
     if(!$this->form_validation->run()){
     $this->load->view('templates/head/header');
     $this->load->view('search/search_template',$data);
@@ -38,42 +44,42 @@ public function search_fc(){
         echo $class = $this->input->post('family_class');
         echo $mar = $this->input->post('marital_status');
         echo $lan = $this->input->post('mother_tounge');
-        if($user_gender == 'female'){
-            $gender = 'male';
-        }
-        if($user_gender == 'male'){
-            $gender = 'female';
-        }
-        $where = array(
-            'gender' => $gender,
-            'caste' => $user_caste,
-            'user_active' => 1,
-        );
-        if($edu){
-            $a = array('education' => $edu,);
-            $where = array_merge($where,$a);
-        }
-        if($pro){
-            $a = array('occupation' => $pro,);
-            $where = array_merge($where,$a);
-        }
-        if($inc){
-            $a = array('income_bracket' => $inc,);
-            $where = array_merge($where,$a);
-        }
-        if($class){
-            $a = array('family_class' => $class,);
-            $where = array_merge($where,$a);
-        }
-        if($mar){
-            $a = array('marital_status' => $mar,);
-            $where = array_merge($where,$a);
-        }
-        if($lan){
-            $a = array('mother_tounge' => $lan,);
-            $where = array_merge($where,$a);
-        }
-        var_dump($where);
+        // if($user_gender == 'female'){
+        //     $gender = 'male';
+        // }
+        // if($user_gender == 'male'){
+        //     $gender = 'female';
+        // }
+        // $where = array(
+        //     'gender' => $gender,
+        //     'caste' => $user_caste,
+        //     'user_active' => 1,
+        // );
+        // if($edu){
+        //     $a = array('education' => $edu,);
+        //     $where = array_merge($where,$a);
+        // }
+        // if($pro){
+        //     $a = array('occupation' => $pro,);
+        //     $where = array_merge($where,$a);
+        // }
+        // if($inc){
+        //     $a = array('income_bracket' => $inc,);
+        //     $where = array_merge($where,$a);
+        // }
+        // if($class){
+        //     $a = array('family_class' => $class,);
+        //     $where = array_merge($where,$a);
+        // }
+        // if($mar){
+        //     $a = array('marital_status' => $mar,);
+        //     $where = array_merge($where,$a);
+        // }
+        // if($lan){
+        //     $a = array('mother_tounge' => $lan,);
+        //     $where = array_merge($where,$a);
+        // }
+        // var_dump($where);
         $result = $this->search_model->find_results($user_gender,$user_caste,$edu,$pro,$inc,$class,$mar,$lan);
         var_dump($result);
     }

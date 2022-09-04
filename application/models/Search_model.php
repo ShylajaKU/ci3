@@ -202,7 +202,7 @@ public function find_results($user_gender,$user_caste,$edu,$pro,$inc,$class,$mar
         $a = array('mother_tounge' => $lan,);
         $where = array_merge($where,$a);
     }
-    var_dump($where);
+    // var_dump($where);
 
     $this->db->where($where);
     $query = $this->db->get('users');

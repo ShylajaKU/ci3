@@ -46,25 +46,25 @@ body {
     <!-- ============================ -->
     <?= form_open('',array('id'=>'form-1',)) ?>
     <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
     <label class="form-label" for="he">Highest Education Qualification *</label>
-        <select class="form-control" id="he" name="highest_education" required onchange="fn()">
+        <select class="form-control" id="he" name="highest_education" required onchange="fn1()">
             <?php 
             $array = explode(',',$user_id_table[0][$edu]);
             $count = count($array);
             ?>
-          <option value="0" selected>Any</option>
+          <option value="any" selected>Any</option>
           <?php for ($i = 0; $i < $count; $i++) { ?>
             <option value="<?php echo $array[$i] ?>"><?=  $array[$i] ?></option>'
           <?php }?>
         </select>
         <!-- ============================ -->
     <?= form_close()?>
+    <?= form_open('',array('id'=>'form-2',)) ?>
         <!-- ============================ -->
-        <!-- ============================ -->
-        <!-- ============================ -->
-        <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
         <label class="form-label" for="o">Occupation *</label>
-    <select class="form-control" id="o" name="occupation" required>
+    <select class="form-control" id="o" name="occupation" required onchange="fn2()">
       <?php 
       $array = explode(',',$user_id_table[0][$pro]);
       $count = count($array);
@@ -75,8 +75,14 @@ body {
       <?php }?>
     </select>
         <!-- ============================ -->
+            <?= form_close()?>
+        <!-- ============================ -->
+        <?= form_open('',array('id'=>'form-3',)) ?>
+        <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
+
         <label class="form-label" for="he">Annual Income *</label>
-    <select class="form-control" id="he" name="income_bracket" required>
+    <select class="form-control" id="he" name="income_bracket" required onchange="fn3()">
       <?php 
       $array = explode(',',$user_id_table[0][$inc]);
       $count = count($array);
@@ -87,8 +93,13 @@ body {
       <?php }?>
     </select>
         <!-- ============================ -->
+        <?= form_close()?>
+        <?= form_open('',array('id'=>'form-4',)) ?>
+        <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
+
         <label class="form-label" for="fc">Family Class *</label>
-    <select class="form-control" id="fc" name="family_class" required>
+    <select class="form-control" id="fc" name="family_class" required onchange="fn4()">
       <?php 
       $array = explode(',',$user_id_table[0][$class]);
       $count = count($array);
@@ -99,8 +110,15 @@ body {
       <?php }?>
     </select>
         <!-- ============================ -->
+                <!-- ============================ -->
+                <?= form_close()?>
+        <!-- ============================ -->
+        <?= form_open('',array('id'=>'form-5',)) ?>
+        <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
+
         <label class="form-label" for="ms">Marital Status *</label>
-    <select class="form-control" id="ms" name="marital_status" required>
+    <select class="form-control" id="ms" name="marital_status" required onchange="fn5()">
       <?php 
       $array = explode(',',$user_id_table[0][$mar]);
       $count = count($array);
@@ -111,8 +129,13 @@ body {
       <?php }?>
     </select>
     <!-- ============================ -->
+    <?= form_close()?>
+        <?= form_open('',array('id'=>'form-6',)) ?>
+        <!-- ============================ -->
+    <input type="text" name="hidden" value="hidden" hidden>
+
     <label class="form-label" for="ms">Mother Tounge *</label>
-    <select class="form-control" id="ms" name="mother_tounge" required>
+    <select class="form-control" id="ms" name="mother_tounge" required onchange="fn6()">
       <?php 
       $array = explode(',',$user_id_table[0][$lan]);
       $count = count($array);
@@ -123,6 +146,7 @@ body {
       <?php }?>
     </select>
     <!-- ============================ -->
+    <?= form_close()?>
     <!-- ============================ -->
     <br>
 
@@ -138,9 +162,25 @@ body {
 
 
 <script>
-      function fn(){
+    function fn1(){
     setTimeout = 100;
     document.getElementById("form-1").submit();}
+    function fn2(){
+    setTimeout = 100;
+    document.getElementById("form-2").submit();}
+    function fn3(){
+    setTimeout = 100;
+    document.getElementById("form-3").submit();}
+    function fn4(){
+    setTimeout = 100;
+    document.getElementById("form-4").submit();}
+    function fn5(){
+    setTimeout = 100;
+    document.getElementById("form-5").submit();}
+    function fn6(){
+    setTimeout = 100;
+    document.getElementById("form-6").submit();}
+    
 </script>
 
 
