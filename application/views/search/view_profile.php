@@ -67,6 +67,12 @@ body {
               <br>
               Grew up in a <?= $user[0]['family_class'] ?> family.
               <br>
+              <?php 
+              $dob = $user[0]['dob'];
+              $age = $this->verification_model->age_calculator($dob);
+              ?>
+              Age / Height : <?= $age .' yrs , '.$user[0]['height_cm'].' cm / '.$user[0]['height_feet_inch']  ?>
+              <br>
               Contact Number : <?= $user[0]['phone_no'] ?>
           </p>
         </div>
