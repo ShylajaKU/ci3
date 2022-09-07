@@ -382,12 +382,7 @@ public function community_details_language_relegion_caste_subcaste_fc($language,
 		// var_dump($this->session->userdata());
 		$this->db->where('user_id',$user_id);
 		$this->db->update('users',$data);
-		$table_name = 'users';
-		$known_value = $user_id;
-		$col_name_of_known_value = 'user_id';
-		$col_name_of_op_value = 'gender';
-		$gender = $this->get_model->get_any_field_fm($table_name,$known_value,$col_name_of_known_value,$col_name_of_op_value);
-		$this->search_model->preample($caste,$gender);
+		$this->search_model->prepreample($caste);
 		redirect('home');
 	}
 }

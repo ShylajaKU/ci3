@@ -56,9 +56,16 @@ public function insert_information_array_into_caste_id_fm_for_all_caste(){
 }
 
 // ---------------------------------------
+public function prepreample($caste){
+    $gender = 'female';
+    $this->search_model->preample($caste,$gender);
+    $gender = 'male';
+    $this->search_model->preample($caste,$gender);
+}
+// ---------------------------------------
 public function preample($caste,$gender){
     // when is it run ?
-    
+
     if($gender == 'female'){
     $caste_id_table_col = 'highest_education_brides';
     $users_table_col = 'education';
