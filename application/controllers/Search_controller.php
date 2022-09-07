@@ -7,6 +7,7 @@ public function search_fc(){
     if(!$this->session->userdata('logged_in')){redirect('login');}
     $verified = $this->verification_model->verify_user_fm();
     if(!$verified){redirect('login');}
+    $this->search_model->insert_information_array_into_caste_id_fm_for_all_caste();
     // /search page
     $table_name = 'users'; 
     $known_value = $this->session->userdata("user_id");
