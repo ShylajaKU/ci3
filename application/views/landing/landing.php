@@ -5,11 +5,11 @@
         <!-- Header-->
         <header class="bg-primary bg-gradient text-white">
             <div class="container px-4 text-center">
-                <h1 class="fw-bold">Welcome to k4kalyanam.in</h1>
+                <h1 class="fw-bold">Welcome </h1>
                 <p class="lead">We provide matrimonial services for all people. </p>
-                <a class="btn btn-lg btn-light" href="<?= base_url('register')?>">Get 6 month Premium for free now!</a>
+                <a class="btn btn-lg btn-light" href="<?= base_url('register')?>">Get Premium for free now!</a>
                 <br><br>
-                <p class="lead">Register now and get <strong>6 month premium</strong> membership for absolutely <strong>free.</strong></p>
+                <p class="lead">Register now and get <strong> Full Access</strong> now for absolutely <strong>Free .</strong></p>
                 <br>
                 <a class="btn btn-lg btn-light" href="<?= base_url('login')?>">Already member Login here.</a>
 
@@ -27,8 +27,21 @@
                         <ul>
                             <li>Completly FREE Premium plans.</li>
                             <li>On BETA stage of the website free access to all the functionalities.</li>
-                            <li> <a href="<?= base_url('register')?>">Register now</a> and get <strong>6 MONTH PREMIUM PLAN FOR FREE</strong></li>
+                            <li> <a href="<?= base_url('register')?>">Register now</a> and get <strong>PREMIUM PLAN FOR FREE</strong></li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Beta Stage</h2>
+                        <p class="lead">
+                            Our website is currently in beta stage, all the functionality may not be available right now. Please be patient we are actively working on improving and implementing new features into the website .<br>
+                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -80,7 +93,7 @@
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
                         <h2 id="contact">Contact us</h2>
-                        <p class="lead">Email : kforkalyanam.in@gmail.com</p>
+                        <p class="lead">Email : matrimony.illikkal@gmail.com</p>
                     </div>
                 </div>
             </div>
