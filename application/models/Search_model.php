@@ -205,11 +205,33 @@ public function find_results($user_gender,$user_caste,$edu,$pro,$inc,$class,$mar
     // var_dump($where);
 
     $this->db->where($where);
-    $query = $this->db->get('users');
-    return $result = $query->result_array();
+    // $query = $this->db->get('users');
+    // $this->db->join(
+    //     'user_images',
+    //     'user_images.user_id = users.user_id and user_images.profile_photo = 1'
+    // );
+    // return $result = $query->result_array();
+    $this->db->from('users');
+    $this->db->join(
+        'user_images',
+        'user_images.user_id = users.user_id and user_images.profile_photo = 1'
+    );
+    $query = $this->db->get()->result_array();
+    return $query;
 
 }
 // ---------------------------------------
+public function get_all_columns_fm($known_value,$known_value_col_name,$table_name){
+    $where = array(
+        $known_value_col_name => $known_value,
+    );
+    $this->db->where($where);
+
+    $this->db->from($table_name);
+
+    $query = $this->db->get()->result_array();
+    return $query;
+}
 // ---------------------------------------
 // ---------------------------------------
 // ---------------------------------------

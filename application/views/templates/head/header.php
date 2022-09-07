@@ -34,7 +34,7 @@
 
 </head>
 <?php
-$site_name = 'k for kalyanam.in';
+$site_name = 'Free Matrimony';
 ?>
 
 <body>

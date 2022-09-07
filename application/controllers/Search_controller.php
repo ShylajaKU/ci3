@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Search_controller extends CI_Controller {
 // ------------------------------------------
 public function search_fc(){
+    if(!$this->session->userdata('logged_in')){redirect('login');}
+    $verified = $this->verification_model->verify_user_fm();
+    if(!$verified){redirect('login');}
     // /search page
     $table_name = 'users'; 
     $known_value = $this->session->userdata("user_id");
@@ -27,64 +30,47 @@ public function search_fc(){
     $data['user_caste'] = $user_caste;
 
     $this->form_validation->set_rules('hidden','Education','required');
-    // $this->form_validation->set_rules('highest_education','Education','required');
-    // $this->form_validation->set_rules('occupation','Education','required');
-    // $this->form_validation->set_rules('income_bracket','Education','required');
-    // $this->form_validation->set_rules('family_class','Education','required');
-    // $this->form_validation->set_rules('marital_status','Education','required');
-    // $this->form_validation->set_rules('mother_tounge','Education','required');
+
     if(!$this->form_validation->run()){
     $this->load->view('templates/head/header');
     $this->load->view('search/search_template',$data);
     $this->load->view('templates/foot/footer');
     }else{
-        echo $edu = $this->input->post('highest_education');
-        echo $pro = $this->input->post('occupation');
-        echo $inc = $this->input->post('income_bracket');
-        echo $class = $this->input->post('family_class');
-        echo $mar = $this->input->post('marital_status');
-        echo $lan = $this->input->post('mother_tounge');
-        // if($user_gender == 'female'){
-        //     $gender = 'male';
-        // }
-        // if($user_gender == 'male'){
-        //     $gender = 'female';
-        // }
-        // $where = array(
-        //     'gender' => $gender,
-        //     'caste' => $user_caste,
-        //     'user_active' => 1,
-        // );
-        // if($edu){
-        //     $a = array('education' => $edu,);
-        //     $where = array_merge($where,$a);
-        // }
-        // if($pro){
-        //     $a = array('occupation' => $pro,);
-        //     $where = array_merge($where,$a);
-        // }
-        // if($inc){
-        //     $a = array('income_bracket' => $inc,);
-        //     $where = array_merge($where,$a);
-        // }
-        // if($class){
-        //     $a = array('family_class' => $class,);
-        //     $where = array_merge($where,$a);
-        // }
-        // if($mar){
-        //     $a = array('marital_status' => $mar,);
-        //     $where = array_merge($where,$a);
-        // }
-        // if($lan){
-        //     $a = array('mother_tounge' => $lan,);
-        //     $where = array_merge($where,$a);
-        // }
-        // var_dump($where);
+        $edu = $this->input->post('highest_education');
+        $pro = $this->input->post('occupation');
+        $inc = $this->input->post('income_bracket');
+        $class = $this->input->post('family_class');
+        $mar = $this->input->post('marital_status');
+        $lan = $this->input->post('mother_tounge');
+
         $result = $this->search_model->find_results($user_gender,$user_caste,$edu,$pro,$inc,$class,$mar,$lan);
-        var_dump($result);
+        $data['matches'] = $result; // for home page
+    $this->load->view('templates/head/header');
+    $this->load->view('search/search_template',$data);
+	$this->load->view('home/home',$data);
+    $this->load->view('templates/foot/footer');
+
+        // var_dump($result);
+
     }
 
 }
+// ------------------------------------------
+public function view_profile_fc($user_id){
+    $known_value = $user_id;
+    $known_value_col_name = 'user_id';
+    $table_name = 'users';
+    $data['user'] = $this->search_model->get_all_columns_fm($known_value,$known_value_col_name,$table_name);
+    $table_name = 'user_images';
+    $data['images'] = $this->search_model->get_all_columns_fm($known_value,$known_value_col_name,$table_name);
+	$this->load->view('templates/head/header');
+	$this->load->view('search/view_profile',$data);
+	$this->load->view('templates/foot/footer');
+}
+// ------------------------------------------
+// ------------------------------------------
+// ------------------------------------------
+// ------------------------------------------
 // ------------------------------------------
 public function search_by_education_fc($gender,$user_caste){
     $edu = $this->input->post('highest_education');

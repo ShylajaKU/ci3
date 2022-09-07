@@ -16,7 +16,7 @@ body {
 
 </style>
 
-<div class="container-fluid">
+<div class="container-fluid" style="max-width:800px ;">
   <div class="px-lg-5">
 
     <!-- Heading -->
@@ -42,7 +42,8 @@ body {
               $lan = 'language_list_brides';
             }
             ?>
-
+    <!-- <input type="text" name="hidden" value="hidden" hidden> -->
+    <!-- this works only on each forms not in common -->
     <!-- ============================ -->
     <?= form_open('',array('id'=>'form-1',)) ?>
     <!-- ============================ -->
@@ -53,7 +54,7 @@ body {
             $array = explode(',',$user_id_table[0][$edu]);
             $count = count($array);
             ?>
-          <option value="any" selected>Any</option>
+          <option value="any" selected>Select</option>
           <?php for ($i = 0; $i < $count; $i++) { ?>
             <option value="<?php echo $array[$i] ?>"><?=  $array[$i] ?></option>'
           <?php }?>
@@ -69,14 +70,13 @@ body {
       $array = explode(',',$user_id_table[0][$pro]);
       $count = count($array);
       ?>
-        <option value="0" selected>Any</option>
+        <option value="0" selected>Select</option>
       <?php for ($i = 0; $i < $count; $i++) { ?>
         <option value="<?php echo $array[$i] ?>"><?=  $array[$i] ?></option>'
       <?php }?>
     </select>
         <!-- ============================ -->
             <?= form_close()?>
-        <!-- ============================ -->
         <?= form_open('',array('id'=>'form-3',)) ?>
         <!-- ============================ -->
     <input type="text" name="hidden" value="hidden" hidden>
@@ -87,7 +87,7 @@ body {
       $array = explode(',',$user_id_table[0][$inc]);
       $count = count($array);
       ?>
-        <option value="0" selected>Any</option>
+        <option value="0" selected>Select</option>
       <?php for ($i = 0; $i < $count; $i++) { ?>
         <option value="<?php echo $array[$i] ?>"><?=  $array[$i] ?></option>'
       <?php }?>
@@ -104,15 +104,13 @@ body {
       $array = explode(',',$user_id_table[0][$class]);
       $count = count($array);
       ?>
-        <option value="0" selected>Any</option>
+        <option value="0" selected>Select</option>
       <?php for ($i = 0; $i < $count; $i++) { ?>
         <option value="<?php echo $array[$i] ?>"><?=  $array[$i] ?></option>'
       <?php }?>
     </select>
         <!-- ============================ -->
-                <!-- ============================ -->
                 <?= form_close()?>
-        <!-- ============================ -->
         <?= form_open('',array('id'=>'form-5',)) ?>
         <!-- ============================ -->
     <input type="text" name="hidden" value="hidden" hidden>
@@ -123,7 +121,7 @@ body {
       $array = explode(',',$user_id_table[0][$mar]);
       $count = count($array);
       ?>
-        <option value="0" selected>Any</option>
+        <option value="0" selected>Select</option>
       <?php for ($i = 0; $i < $count; $i++) { ?>
         <option value="<?php echo $array[$i] ?>"><?=  ucwords($array[$i]) ?></option>'
       <?php }?>
@@ -140,7 +138,7 @@ body {
       $array = explode(',',$user_id_table[0][$lan]);
       $count = count($array);
       ?>
-        <option value="0" selected>Any</option>
+        <option value="0" selected>Select</option>
       <?php for ($i = 0; $i < $count; $i++) { ?>
         <option value="<?php echo $array[$i] ?>"><?=  ucwords($array[$i]) ?></option>'
       <?php }?>
@@ -180,7 +178,6 @@ body {
     function fn6(){
     setTimeout = 100;
     document.getElementById("form-6").submit();}
-    
 </script>
 
 

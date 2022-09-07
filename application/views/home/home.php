@@ -27,6 +27,7 @@ body {
     <div class="row">
 <?php 
 foreach($matches as $match){
+    $user_id = $match['user_id'];
     $upload_path = $match['upload_path'];
     $raw_name = $match['raw_name'];
     $file_ext = $match['file_ext'];
@@ -45,6 +46,7 @@ foreach($matches as $match){
     ?>
       <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+        <a href="<?= base_url("view-profile/".$user_id) ?>">
       <div class="bg-white rounded shadow-sm">
             <picture>
                 <source srcset="<?=base_url($webp_file)?>" type="image/webp">
@@ -61,6 +63,7 @@ foreach($matches as $match){
       </div>
       </div>
       </div>
+      </a>
       </div>
       <!-- End Gallery Item-->
 
