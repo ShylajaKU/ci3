@@ -7,8 +7,8 @@ class Verification_model extends CI_Model
     public function send_email_verication_link_fm($user_id){
         // called from register 1st page
         // resend is in verifiction controller
-        $official_email_sl_no = '1';
-        // $official_email_sl_no = '8';
+        // $official_email_sl_no = '1';
+        $official_email_sl_no = '8';
         // for verifying email
         $this->db->where('user_id',$user_id);
         // $this->db->select('user_id');
