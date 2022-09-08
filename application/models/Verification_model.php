@@ -42,7 +42,7 @@ public function send_verification_email_fm($email,$official_email_sl_no,$email_v
     $port = $result[0]['port'];
     $this->load->library('email');
 
-if(base_url() != 'https://kforkalyanam.in/' ){
+if(base_url() != 'https://matrimony.illikkal.com/' ){
     $protocol = 'smtp';   
      // smtp for localhost
 }else{
@@ -67,7 +67,7 @@ $config = array(
     'priority' => '1',
 );
 
-$site_name = 'kforkalyanam';
+$site_name = 'matrimony.illikkal.com';
 
 $this->email->initialize($config);
 
