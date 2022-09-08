@@ -382,7 +382,7 @@ public function community_details_language_relegion_caste_subcaste_fc($language,
 		// var_dump($this->session->userdata());
 		$this->db->where('user_id',$user_id);
 		$this->db->update('users',$data);
-		$this->search_model->prepreample($caste);
+		// $this->search_model->prepreample($caste);
 		redirect('home');
 	}
 }
@@ -463,10 +463,19 @@ public function height_calculator_fc(){
 		$user_id = $this->session->userdata('user_id');
 		$this->db->where('user_id',$user_id);
 		$this->db->update('users',$data);
+
+		$table_name = 'users';
+		$known_value = $user_id;
+		$col_name_of_known_value = 'user_id';
+		$col_name_of_op_value = 'caste';
+		$caste = $this->get_model->get_any_field_fm($table_name,$known_value,$col_name_of_known_value,$col_name_of_op_value);
+		$this->search_model->prepreample($caste);
+
 		if(!is_null($data_to_view['current_value'])){
 
 			redirect('your-profile/#height');
 	}else{
+
 		redirect('home');
 	}
 	}
