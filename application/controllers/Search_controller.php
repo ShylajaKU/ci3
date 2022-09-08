@@ -57,7 +57,10 @@ public function search_fc(){
 
 }
 // ------------------------------------------
-public function view_profile_fc($user_id){
+public function view_profile_fc($no,$salt){
+    //$no = ($user_id*102548)-(25450/$user_id)
+    // from home.php view page
+    $user_id = $no / (102548-$salt);
     $known_value = $user_id;
     $known_value_col_name = 'user_id';
     $table_name = 'users';

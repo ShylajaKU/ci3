@@ -46,7 +46,11 @@ foreach($matches as $match){
     ?>
       <!-- Gallery item -->
       <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-        <a href="<?= base_url("view-profile/".$user_id) ?>">
+        <?php 
+        // in search controller
+        $salt = rand(12345,98745);
+        $no = ($user_id*102548)-($salt*$user_id) ?>
+        <a href="<?= base_url("view-profile/".$no.'/'.$salt) ?>">
       <div class="bg-white rounded shadow-sm">
             <picture>
                 <source srcset="<?=base_url($webp_file)?>" type="image/webp">

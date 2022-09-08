@@ -22,7 +22,7 @@ $route['home'] = 'welcome/home_fc';
 $route['search'] = 'search_controller/search_fc';
 $route['search/(:any)'] = 'search_controller/search_fc/$1';
 $route['search-by-education/(:any)/(:any)'] = 'search_controller/search_by_education_fc/$1/$2';
-$route['view-profile/(:num)'] = 'search_controller/view_profile_fc/$1';
+$route['view-profile/(:num)/(:num)'] = 'search_controller/view_profile_fc/$1/$2';
 
 // search matches
 // $route['add-address/(:num)'] = 'welcome/add_address_fc/$1';
