@@ -5,6 +5,11 @@ class Verification_controller extends CI_Controller {
 // ------------------------------------------
 public function send_email_verication_link_fc($user_id,$official_email_sl_no){
     // for verifying email
+    // used from where ?
+    // welcome.php controller
+	// public function register_1st_page(){
+    // $this->verification_model->send_email_verication_link_fm($user_id);
+    
     $this->db->where('user_id',$user_id);
     // $this->db->select('user_id');
     $result = $this->db->get('users')->result_array();
@@ -48,7 +53,8 @@ public function resend_verification_email_fc($user_id){
     $email_ver_code_one = $result['email_ver_code_one'];
     $email_ver_code_two = $result['email_ver_code_two'];
     $email = $result['email'];
-    $official_email_sl_no = '1';
+    // $official_email_sl_no = '1';
+    $official_email_sl_no = '8';
     $this->verification_model->send_verification_email_fm($email,$official_email_sl_no,$email_ver_code_one,$email_ver_code_two,$user_id);
     $this->session->set_flashdata('success','Verificaton email has been resend');
     redirect('please-verify-your-email');
