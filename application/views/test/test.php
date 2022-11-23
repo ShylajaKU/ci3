@@ -284,6 +284,8 @@
 
 
 $this->search_model->insert_information_array_into_caste_id_fm_for_all_caste();
+// 
+echo $_SERVER['SERVER_ADDR'];
 ?>
 
 
